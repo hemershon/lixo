@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-12-24T15:46:05-03:00</updated><id>/feed.xml</id><title type="html">Hemershon Silva</title><subtitle>Formado em Ciência da computação e Engenharia de software e um apaixonado por física.</subtitle><author><name>Hemershon Silva</name></author><entry><title type="html">Métodos interessantes para tratar seus array no Rails</title><link href="/rails/metodos-para-tratar-array/" rel="alternate" type="text/html" title="Métodos interessantes para tratar seus array no Rails" /><published>2022-12-24T00:00:00-03:00</published><updated>2022-12-24T00:00:00-03:00</updated><id>/rails/metodos-para-tratar-array</id><content type="html" xml:base="/rails/metodos-para-tratar-array/">&lt;p&gt;Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-12-24T18:01:00-03:00</updated><id>/feed.xml</id><title type="html">Hemershon Silva</title><subtitle>Formado em Ciência da computação e Engenharia de software e um apaixonado por física.</subtitle><author><name>Hemershon Silva</name></author><entry><title type="html">Métodos para tratar seus Array, Hashes, Ranges</title><link href="/rails/metodos-para-tratar-array/" rel="alternate" type="text/html" title="Métodos para tratar seus Array, Hashes, Ranges" /><published>2022-12-24T00:00:00-03:00</published><updated>2022-12-24T00:00:00-03:00</updated><id>/rails/metodos-para-tratar-array</id><content type="html" xml:base="/rails/metodos-para-tratar-array/">&lt;p&gt;Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?&lt;/p&gt;
 
 &lt;p&gt;Procurando na documentação você se depara com a seguinte situação&lt;/p&gt;
 
@@ -9,9 +9,10 @@ Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum 
 
 &lt;p&gt;&lt;strong&gt;detalhes do map:&lt;/strong&gt;
 O podemos usar ele com arrays, hashes e ranges
-o principal uso do map é transformar dados.
-    por exemplo:
-    dada uma matriz de strings, você pode passar por cima de cada string e tornar cada caractere maiúsculo&lt;/p&gt;
+o principal uso do map é transformar dados.&lt;/p&gt;
+
+&lt;p&gt;por exemplo:
+dada uma matriz de strings, você pode passar por cima de cada string e tornar cada caractere maiúsculo&lt;/p&gt;
 
 &lt;p&gt;Sintaxe do map no Ruby&lt;/p&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;array = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
@@ -23,15 +24,66 @@ array.map { |string| string.upcase } # [&quot;A&quot;, &quot;B&quot;, &quot;C&qu
 
 &lt;p&gt;A collect invoca o bloco fornecido uma vez para cada elemento de &lt;em&gt;self&lt;/em&gt;, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;detalhes do collect&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;O collect() de enumerable é um método embutido em ruby que retorna um novo array com resultados da execução do bloco uma vez para cada elemento em enum
+O objeto é repetido todas as veses para cada enum, caso nenhum objeto seja fornecido, ele retorna nil para cada enum&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sintaxe:&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; (r1..r2).collect {|obj| bloquado }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Parâmetros:&lt;/strong&gt; A função pega o objeto e o bloco que é para cada enum, também leva r1 e r2 que decide o número de elementos no enumerável retornado.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;valor do retorno:&lt;/strong&gt; Retorna um novo array&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;retorna o enumerador&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enu = (2..6).collect { |x| x * 10 } # [20, 30, 40, 50, 60]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;retorna o valor nil&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;enu = (2..6).collect {} # [nil, nil, nil, nil, nil]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;fonte: &lt;a href=&quot;https://www.geeksforgeeks.org/ruby-enumerable-collect-function/&quot;&gt;Geeksforgeeks&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;select&quot;&gt;Select&lt;/h2&gt;
 
 &lt;p&gt;O select funciona de duas maneiras únicas; 
 Primeiro: pega o bloco para que possa ser usado como array#select 
 Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.&lt;/p&gt;
 
+&lt;p&gt;&lt;em&gt;Exemplo:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[1, 2, 3, 4, 5].select { |num| num.event? } # [2, 4]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Exemplo 2:&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a = %w{ a b c d e f }
+a.select { |v| v =~ /[aeiou]/ } # [&quot;a&quot;, &quot;e&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Detalhes do select&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Select&lt;/strong&gt; é um método de calsse array que retorna um novo array contendo todos os elementos do array para os quais o bloco dado retorna um valor verdadeiro.&lt;/p&gt;
+
+&lt;p&gt;Sintaxe: array.select()&lt;/p&gt;
+
+&lt;p&gt;Parâmentro: Matriz&lt;/p&gt;
+
+&lt;p&gt;Retorno: Uma nova matriz contendo todos os elemetos da matriz para os quais o bloco fornecido retorna um valor verdadeiro.&lt;/p&gt;
+
+&lt;p&gt;fonte: &lt;a href=&quot;https://www.geeksforgeeks.org/ruby-array-select-function/&quot;&gt;Geeksforgeeks&lt;/a&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;each&quot;&gt;Each&lt;/h2&gt;
 
 &lt;p&gt;O each chama o bloco fornecido uma vez para cada elemento em &lt;em&gt;self&lt;/em&gt;, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; a = [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ]
+ a.each { |x| print x, &quot;--&quot; } # a--b--c-- =&amp;gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;] 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.&lt;/p&gt;
 

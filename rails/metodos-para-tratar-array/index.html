@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Métodos interessantes para tratar seus array no Rails - Hemershon Silva</title>
+<!-- begin _includes/seo.html --><title>Métodos para tratar seus Array, Hashes, Ranges - Hemershon Silva</title>
 <meta name="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?  Procurando na documentação você se depara com a seguinte situação  Map">
 
 
@@ -22,7 +22,7 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hemershon Silva">
-<meta property="og:title" content="Métodos interessantes para tratar seus array no Rails">
+<meta property="og:title" content="Métodos para tratar seus Array, Hashes, Ranges">
 <meta property="og:url" content="/rails/metodos-para-tratar-array/">
 
 
@@ -252,7 +252,7 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Métodos interessantes para tratar seus array no Rails">
+    <meta itemprop="headline" content="Métodos para tratar seus Array, Hashes, Ranges">
     <meta itemprop="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?Procurando na documentação você se depara com a seguinte situaçãoMap">
     <meta itemprop="datePublished" content="2022-12-24T00:00:00-03:00">
     
@@ -261,7 +261,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="/rails/metodos-para-tratar-array/" class="u-url" itemprop="url">Métodos interessantes para tratar seus array no Rails
+            <a href="/rails/metodos-para-tratar-array/" class="u-url" itemprop="url">Métodos para tratar seus Array, Hashes, Ranges
 </a>
           </h1>
           
@@ -278,7 +278,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 minute read
+          2 minute read
         
       </span>
     
@@ -301,9 +301,10 @@ Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum 
 
 <p><strong>detalhes do map:</strong>
 O podemos usar ele com arrays, hashes e ranges
-o principal uso do map é transformar dados.
-    por exemplo:
-    dada uma matriz de strings, você pode passar por cima de cada string e tornar cada caractere maiúsculo</p>
+o principal uso do map é transformar dados.</p>
+
+<p>por exemplo:
+dada uma matriz de strings, você pode passar por cima de cada string e tornar cada caractere maiúsculo</p>
 
 <p>Sintaxe do map no Ruby</p>
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array = ["a", "b", "c"]
@@ -315,15 +316,66 @@ array.map { |string| string.upcase } # ["A", "B", "C"]
 
 <p>A collect invoca o bloco fornecido uma vez para cada elemento de <em>self</em>, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.</p>
 
+<p><strong>detalhes do collect</strong></p>
+
+<p>O collect() de enumerable é um método embutido em ruby que retorna um novo array com resultados da execução do bloco uma vez para cada elemento em enum
+O objeto é repetido todas as veses para cada enum, caso nenhum objeto seja fornecido, ele retorna nil para cada enum</p>
+
+<p><em>Sintaxe:</em></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> (r1..r2).collect {|obj| bloquado }
+</code></pre></div></div>
+
+<p><strong>Parâmetros:</strong> A função pega o objeto e o bloco que é para cada enum, também leva r1 e r2 que decide o número de elementos no enumerável retornado.</p>
+
+<p><strong>valor do retorno:</strong> Retorna um novo array</p>
+
+<p><em>retorna o enumerador</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enu = (2..6).collect { |x| x * 10 } # [20, 30, 40, 50, 60]
+</code></pre></div></div>
+<p><em>retorna o valor nil</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enu = (2..6).collect {} # [nil, nil, nil, nil, nil]
+
+</code></pre></div></div>
+
+<p>fonte: <a href="https://www.geeksforgeeks.org/ruby-enumerable-collect-function/">Geeksforgeeks</a></p>
+
 <h2 id="select">Select</h2>
 
 <p>O select funciona de duas maneiras únicas; 
 Primeiro: pega o bloco para que possa ser usado como array#select 
 Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.</p>
 
+<p><em>Exemplo:</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4, 5].select { |num| num.event? } # [2, 4]
+</code></pre></div></div>
+
+<p><em>Exemplo 2:</em></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = %w{ a b c d e f }
+a.select { |v| v =~ /[aeiou]/ } # ["a", "e"]
+</code></pre></div></div>
+<p><strong>Detalhes do select</strong></p>
+
+<p><strong>Select</strong> é um método de calsse array que retorna um novo array contendo todos os elementos do array para os quais o bloco dado retorna um valor verdadeiro.</p>
+
+<p>Sintaxe: array.select()</p>
+
+<p>Parâmentro: Matriz</p>
+
+<p>Retorno: Uma nova matriz contendo todos os elemetos da matriz para os quais o bloco fornecido retorna um valor verdadeiro.</p>
+
+<p>fonte: <a href="https://www.geeksforgeeks.org/ruby-array-select-function/">Geeksforgeeks</a></p>
+
 <h2 id="each">Each</h2>
 
 <p>O each chama o bloco fornecido uma vez para cada elemento em <em>self</em>, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> a = [ "a", "b", "c" ]
+ a.each { |x| print x, "--" } # a--b--c-- =&gt; ["a", "b", "c"] 
+</code></pre></div></div>
 
 <p>Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.</p>
 
@@ -384,7 +436,7 @@ Segundo: Modifica a instrução SELECT da consulta para que apenas determinados 
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=M%C3%A9todos+interessantes+para+tratar+seus+array+no+Rails%20%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=M%C3%A9todos+para+tratar+seus+Array%2C+Hashes%2C+Ranges%20%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
