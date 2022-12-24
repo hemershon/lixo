@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-24T14:27:15-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hemershon Silva</title><subtitle>Formado em Ciência da computação e Engenharia de software e um apaixonado por física.</subtitle><author><name>Hemershon Silva</name></author><entry><title type="html">Métodos interessantes para tratar seus array no Rails</title><link href="http://localhost:4000/rails/metodos-para-tratar-array/" rel="alternate" type="text/html" title="Métodos interessantes para tratar seus array no Rails" /><published>2022-12-24T00:00:00-03:00</published><updated>2022-12-24T00:00:00-03:00</updated><id>http://localhost:4000/rails/metodos-para-tratar-array</id><content type="html" xml:base="http://localhost:4000/rails/metodos-para-tratar-array/">&lt;p&gt;Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?&lt;/p&gt;
+
+&lt;p&gt;Procurando na documentação você se depara com a seguinte situação&lt;/p&gt;
+
+&lt;p&gt;Map 
+O map invoca o bloco fornecido uma vez para cada elemento de self. 
+Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornado&lt;/p&gt;
+
+&lt;p&gt;Collect&lt;br /&gt;
+A collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.&lt;/p&gt;
+
+&lt;p&gt;Select&lt;br /&gt;
+O select funciona de duas maneiras únicas; 
+Primeiro: pega o bloco para que possa ser usado como array#select 
+Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.&lt;/p&gt;
+
+&lt;p&gt;Each 
+O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.&lt;/p&gt;
+
+&lt;p&gt;Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.&lt;/p&gt;
+
+&lt;p&gt;Fontes: https://apidock.com&lt;/p&gt;</content><author><name>Hemershon Silva</name></author><category term="Rails" /><category term="rails" /><category term="ruby" /><category term="linux" /><category term="metodos" /><summary type="html">Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles? Procurando na documentação você se depara com a seguinte situação Map O map invoca o bloco fornecido uma vez para cada elemento de self. Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornado Collect A collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map. Select O select funciona de duas maneiras únicas; Primeiro: pega o bloco para que possa ser usado como array#select Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados. Each O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador. Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.</summary></entry></feed>
