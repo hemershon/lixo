@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Métodos interessantes para tratar seus array no Rails - Hemershon Silva</title>
-<meta name="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?  Procurando na documentação você se depara com a seguinte situação  Map  O map invoca o bloco fornecido uma vez para cada elemento de self.  Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornado  Collect A collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.  Select O select funciona de duas maneiras únicas;  Primeiro: pega o bloco para que possa ser usado como array#select  Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.  Each  O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.  Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.">
+<meta name="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?  Procurando na documentação você se depara com a seguinte situação  Map">
 
 
   <meta name="author" content="Hemershon Silva">
@@ -23,10 +23,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Hemershon Silva">
 <meta property="og:title" content="Métodos interessantes para tratar seus array no Rails">
-<meta property="og:url" content="http://localhost:4000/rails/metodos-para-tratar-array/">
+<meta property="og:url" content="/rails/metodos-para-tratar-array/">
 
 
-  <meta property="og:description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?  Procurando na documentação você se depara com a seguinte situação  Map  O map invoca o bloco fornecido uma vez para cada elemento de self.  Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornado  Collect A collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.  Select O select funciona de duas maneiras únicas;  Primeiro: pega o bloco para que possa ser usado como array#select  Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.  Each  O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.  Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.">
+  <meta property="og:description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?  Procurando na documentação você se depara com a seguinte situação  Map">
 
 
 
@@ -45,7 +45,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/rails/metodos-para-tratar-array/">
+<link rel="canonical" href="/rails/metodos-para-tratar-array/">
 
 
 
@@ -56,7 +56,7 @@
     
       "@type": "Person",
       "name": "Hemershon Silva",
-      "url": "http://localhost:4000/"
+      "url": "/"
     
   }
 </script>
@@ -148,7 +148,7 @@
 
   <div class="author__content">
     <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Hemershon Silva</a>
+      <a class="u-url" rel="me" href="/" itemprop="url">Hemershon Silva</a>
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
@@ -253,7 +253,7 @@
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Métodos interessantes para tratar seus array no Rails">
-    <meta itemprop="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?Procurando na documentação você se depara com a seguinte situaçãoMap O map invoca o bloco fornecido uma vez para cada elemento de self. Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornadoCollectA collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.SelectO select funciona de duas maneiras únicas; Primeiro: pega o bloco para que possa ser usado como array#select Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.Each O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.">
+    <meta itemprop="description" content="Recentemente me deparei em uma situação interessante, qual é o momento em que devemos usar map, select e o each, normalmente eu uso o each com frequência aí veio a dúvida em qual momento devemos usar os outros métodos e qual é a diferença entre eles?Procurando na documentação você se depara com a seguinte situaçãoMap">
     <meta itemprop="datePublished" content="2022-12-24T00:00:00-03:00">
     
 
@@ -261,7 +261,7 @@
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/rails/metodos-para-tratar-array/" class="u-url" itemprop="url">Métodos interessantes para tratar seus array no Rails
+            <a href="/rails/metodos-para-tratar-array/" class="u-url" itemprop="url">Métodos interessantes para tratar seus array no Rails
 </a>
           </h1>
           
@@ -294,24 +294,40 @@
 
 <p>Procurando na documentação você se depara com a seguinte situação</p>
 
-<p>Map 
-O map invoca o bloco fornecido uma vez para cada elemento de self. 
+<h2 id="map">Map</h2>
+
+<p>O map invoca o bloco fornecido uma vez para cada elemento de <em>self</em>. 
 Criando um novo array contendo os valores retornados pelo bloco, se caso nenhum bloco for fornecido, um Enumerador será retornado</p>
 
-<p>Collect<br />
-A collect invoca o bloco fornecido uma vez para cada elemento de self, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.</p>
+<p><strong>detalhes do map:</strong>
+O podemos usar ele com arrays, hashes e ranges
+o principal uso do map é transformar dados.
+    por exemplo:
+    dada uma matriz de strings, você pode passar por cima de cada string e tornar cada caractere maiúsculo</p>
 
-<p>Select<br />
-O select funciona de duas maneiras únicas; 
+<p>Sintaxe do map no Ruby</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array = ["a", "b", "c"]
+
+array.map { |string| string.upcase } # ["A", "B", "C"]
+</code></pre></div></div>
+
+<h2 id="collect">Collect</h2>
+
+<p>A collect invoca o bloco fornecido uma vez para cada elemento de <em>self</em>, ele criar um novo array contendo os valores retornados pelo bloco, se não estiver nenhum bloco ele será retornado um Enumerador, no caso é a mesma coisa que o map.</p>
+
+<h2 id="select">Select</h2>
+
+<p>O select funciona de duas maneiras únicas; 
 Primeiro: pega o bloco para que possa ser usado como array#select 
 Segundo: Modifica a instrução SELECT da consulta para que apenas determinados campos sejam recuperados.</p>
 
-<p>Each 
-O each chama o bloco fornecido uma vez para cada elemento em self, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.</p>
+<h2 id="each">Each</h2>
+
+<p>O each chama o bloco fornecido uma vez para cada elemento em <em>self</em>, passando esse elemento como um parâmetro, no caso ele retornar o próprio array, se caso nenhum bloco for fornecedor ele também traz um Enumerador.</p>
 
 <p>Isso foi um resumo para entender melhor como tratar seus array usando métodos diferentes para situações diferentes.</p>
 
-<p>Fontes: https://apidock.com</p>
+<p>Fontes: <a href="https://apidock.com">Apidock</a></p>
 
         
       </section>
@@ -368,11 +384,11 @@ O each chama o bloco fornecido uma vez para cada elemento em self, passando esse
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=M%C3%A9todos+interessantes+para+tratar+seus+array+no+Rails%20http%3A%2F%2Flocalhost%3A4000%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=M%C3%A9todos+interessantes+para+tratar+seus+array+no+Rails%20%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=%2Frails%2Fmetodos-para-tratar-array%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
